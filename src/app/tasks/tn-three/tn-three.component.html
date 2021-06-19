@@ -1,0 +1,18 @@
+<section class="container">
+    <div class="row">
+        <div class="col">
+            <input type="number" class="form-control" [(ngModel)]="loopCount" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" *appLoop="loopCount">
+            <div class="card">
+                <div class="card-body" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    onclick="javascript:document.getElementById('exampleModalLabel').innerHTML='Angular 1';">
+                    <h5 class="card-title">Angular</h5>
+                    <img src="././assets/images/angular.png" class="w-100" alt="angular 1" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

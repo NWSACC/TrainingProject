@@ -1,0 +1,53 @@
+<section class="container my-5">
+    <form [formGroup]="contactForm" (ngSubmit)="SubmitContactInformation()">
+        <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" name="name" formControlName="name" class="form-control"
+                [ngClass]="{'is-invalid': submitted && f.name.errors}" placeholder="Your Name">
+            <div class="invalid-feedback" *ngIf="submitted && f.name.errors">
+                <p *ngIf="f.name.errors?.required">
+                    Your Name is required!
+                </p>
+                <p *ngIf="f.name.errors?.invalid">
+                    Your Name is invalid!
+                </p>
+                <p *ngIf="f.name.errors?.forbidden">
+                    Your Name is not allowed!
+                </p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Your Email Address</label>
+            <input type="email" name="email" formControlName="email" class="form-control" appEmailValidator
+                [ngClass]="{'is-invalid': submitted && f.email.errors}" placeholder="name@example.com">
+            <div class="invalid-feedback" *ngIf="submitted && f.email.errors">
+                <p *ngIf="f.email.errors?.emailInvalid">
+                    Your Email Address is invalid!
+                </p>
+                <p *ngIf="f.email.errors?.required">
+                    Your Email Address is required!
+                </p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" name="message" formControlName="message" rows="3"
+                [ngClass]="{'is-invalid': submitted && f.message.errors}"
+                placeholder="Your Message Content."></textarea>
+            <div class="invalid-feedback" *ngIf="submitted && f.message.errors">
+                <p *ngIf="f.message.errors?.minlength">
+                    Message minimum characters is 10.
+                </p>
+                <p *ngIf="f.message.errors?.required">
+                    Message is required!
+                </p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</section>

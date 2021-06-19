@@ -1,0 +1,22 @@
+<section class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">SNO</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contactModel of contactModels; index as i">
+                    <th scope="row">{{i}}</th>
+                    <td>{{contactModel.name}}</td>
+                    <td>{{contactModel.email}}</td>
+                    <td>{{contactModel.message}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

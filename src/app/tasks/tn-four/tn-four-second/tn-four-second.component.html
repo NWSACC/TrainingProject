@@ -1,0 +1,40 @@
+<section class="container py-3">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Second</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Input 1:</label>
+            <input type="text" class="form-control" [(ngModel)]="inputValue1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Input 2:</label>
+            <input type="text" class="form-control" [(ngModel)]="inputValue2">
+        </div>
+    </div>
+    <div class="row py-2">
+        <div class="col">
+            <button type="button" class="btn btn-primary" (click)="onSubmitToFirst()">Sent To First</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>From First</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Input 1: {{fromFirst.inputValue1}}</p>
+            <p>Input 2: {{fromFirst.inputValue2}}</p>
+        </div>
+    </div>
+</section>
