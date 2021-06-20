@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-ai',
   templateUrl: './ai.component.html',
-  styleUrls: ['./ai.component.css']
+  styleUrls: ['./ai.component.scss']
 })
 export class AiComponent implements OnInit {
   types:string;

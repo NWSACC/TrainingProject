@@ -1,0 +1,148 @@
+.center-align {
+    display: flex;
+    justify-content: center;
+}
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.align-v-top {
+    vertical-align: top;
+}
+
+.main-contain {
+    width: 90%;
+    max-width: 1280px;
+}
+
+.background-purple {
+    background-color: #a100ff;
+}
+
+.bg-light-color {
+    background-color: #f2f2f2;
+}
+
+.video-size {
+    width: 100%;
+    height: 450px;
+}
+
+.profile-picture-holder {
+    top: -50px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+}
+.profile-picture {
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: -110px;
+    left: -825px;
+    margin: auto;
+}
+
+@mixin font-underline-blue {
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+.font-bold { font-weight: bold; }
+.font-blue { color: blue; }
+.font-underline-blue { @include font-underline-blue; }
+
+.fake-link:hover {
+    color: blue;
+    @include font-underline-blue;
+    cursor: pointer;
+}
+
+@mixin button-animation {
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 250ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+@mixin button-float {
+    transform: translate(-5px, -5px);
+    filter: drop-shadow(10px 10px 2px #b6b6b6);
+}
+@mixin button-land {
+    transform: translate(0,  0px);
+    filter: drop-shadow(5px 5px 2px #b6b6b6);
+}
+@keyframes landing {
+    0% { @include button-float; }
+    100% { @include button-land; }    
+}
+@keyframes floating {
+    0% { @include button-land; }
+    100% { @include button-float; }    
+}
+.shadow-float-animation {
+    animation-name: landing;
+    @include button-animation;
+    &:hover {
+        animation-name: floating;
+    }
+}
+.button-custom-style {
+    background-color: black;
+    color: white;
+    width: 175px;
+    height: 40px;
+    border: none;
+}
+
+$index: 5;
+@while $index <= 100 {
+    .padding-#{$index} {
+        padding: #{$index}px;
+    }
+    .padding-y-#{$index} {
+        padding-top: #{$index}px;
+        padding-bottom: #{$index}px;
+    }
+    .padding-x-#{$index} {
+        padding-left: #{$index}px;
+        padding-right: #{$index}px;
+    }
+    .padding-t-#{$index} {
+        padding-top: #{$index}px;
+    }
+    .padding-r-#{$index} {
+        padding-right: #{$index}px;
+    }
+    .padding-b-#{$index} {
+        padding-bottom: #{$index}px;
+    }
+    .padding-l-#{$index} {
+        padding-left: #{$index}px;
+    }
+    .margin-#{$index} {
+        margin: #{$index}px;
+    }
+    .width-#{$index} {
+        width: #{$index}#{'%'};
+    }
+    .width-#{$index}px {
+        width: #{$index}px;
+    }
+    .height-#{$index}px {
+        height: #{$index}px;
+    }
+    $index: $index + 5;
+}
+
+$font-size: 1;
+@while $font-size <= 60 {
+    .font-size-#{$font-size} {
+        font-size: #{$font-size}px;
+    }
+    $font-size: $font-size + 1;
+}
