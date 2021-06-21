@@ -19,6 +19,7 @@ import { ServicesListComponent } from './services-list/services-list.component';
 import { ServicesModule } from './services/services.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 //Loading UnsavedChangesGuard
 import { UnsavedChangesGuard } from './_guards/un-saved-changes-guard.service';
@@ -72,7 +73,8 @@ import { EmailValidatorDirective } from './tasks/tn-two/directive/email-validato
     AppRoutingModule,
     ServicesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [UnsavedChangesGuard],
   bootstrap: [AppComponent]

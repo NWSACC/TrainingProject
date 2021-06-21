@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tn-two-list.component.css']
 })
 export class TnTwoListComponent implements OnInit {
-  contactModels: any[];
+  contactModels: { name: string, email: string, message: string }[];
 
   constructor() { }
 
   ngOnInit() {
-    this.contactModels = JSON.parse(sessionStorage.getItem("contactModel"));
+    this.contactModels = JSON.parse(sessionStorage.getItem("contactModel")) as { name: string, email: string, message: string }[];
   }
 
 }
