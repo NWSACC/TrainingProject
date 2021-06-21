@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "string",
+      "lastname": "string",
+      "email": "string@string.com",
+      "country": "SG",
+      "address": "string"
+    }
+  ]
+}

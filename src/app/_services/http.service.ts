@@ -7,11 +7,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  private url: string = "https://mockend.com/org/repo/";
+  private url: string = "http://localhost:3000/";
 
   constructor(private http: HttpClient) { }
   
-  getAll(): Observable<any> {
-    return this.http.get(this.url);
+  getAll(modelName: string): Observable<any[]> {
+    return this.http.get(this.url + modelName) as Observable<any[]>;
+  }
+  
+  get(modelName: string, id: number): Observable<any> {
+    return this.http.get(this.url + modelName + "/" + id);
+  }
+  
+  post(modelName: string, data: any): Observable<any> {
+    return this.http.post(this.url + modelName, data);
+  }
+  
+  put<T>(modelName: string, data: any, id: number): Observable<any> {
+    return this.http.put<T>(this.url + modelName + "/" + id, data);
+  }
+  
+  delete(modelName: string, id: number): Observable<any> {
+    return this.http.delete(this.url + modelName + "/" + id);
   }
 }
