@@ -9,7 +9,7 @@ import { HttpService } from './http.service';
 })
 export class UserService {
   public userList: Users[] = [];
-  private modelName: string = "users";
+  private modelName: string = "User";
   public usersSubject: Subject<Users[]> = new Subject<Users[]>();
 
   constructor(private http: HttpService) { }

@@ -25,6 +25,7 @@ export class UserDataDisplayComponent implements OnInit {
   onEditClick(user: Users) {
     this.EditingUser = {
       id: user.id,
+      name: user.name,
       firstname: user.firstname,
       lastname: user.lastname,
       email: user.email,

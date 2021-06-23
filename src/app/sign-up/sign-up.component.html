@@ -3,7 +3,7 @@
     <div class="form-group">
       <label>Firstname</label>
       <input type="text" name="firstname" #fname appHighlight [highlighter]="'yellow'" class="form-control"
-        [(ngModel)]="userData.firstname" formControlName="firstname"
+        [(ngModel)]="userData.name" formControlName="firstname"
         [ngClass]="{'is-invalid': submited && f.firstname.errors }" />
       <div *ngIf="submited && f.firstname.errors" class="invalid-feedback">
         <div *ngIf="f.firstname.errors.required">First Name should not be empty!</div>
