@@ -1,0 +1,33 @@
+<section class="container" *ngIf="isLoggedIn && showAdminBoard">
+    <h1>admin</h1>
+    <div echarts [options]="options" class="demo-chart"></div>
+    <table class="table" *ngIf="!getAllError">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="getAllError">{{getAllError}}</p>
+</section>
+
+<section class="container" *ngIf="isLoggedIn && !showAdminBoard">
+    <h1>normal user</h1>
+</section>
+
+<section class="container" *ngIf="isLoggedIn">
+    <button class="btn btn-primary" (click)="logout()">logout</button>
+</section>
+
+<section class="container" *ngIf="!isLoggedIn">
+    <app-login></app-login>
+</section>

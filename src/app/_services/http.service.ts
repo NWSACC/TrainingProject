@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  private url: string = "https://acctraining2021.hopto.org:4325/";
+  private url: string = "https://192.168.1.64:5001/";
 
   constructor(private http: HttpClient) { }
   

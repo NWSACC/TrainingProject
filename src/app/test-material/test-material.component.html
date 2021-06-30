@@ -1,0 +1,50 @@
+<!-- <mat-card>
+
+    <mat-card-header>
+        <div mat-card-avatar class="mat-header-image"></div>
+        <mat-card-title>A T</mat-card-title>
+    </mat-card-header>
+
+    <img mat-card-image src="../../assets/images/angular.png" alr="Angular" />
+
+    <mat-card-content>
+        <p>asdasdasdsad</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button>Test Button</button>
+        <button mat-button>Test Button 2</button>
+    </mat-card-actions>
+
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile>1</mat-grid-tile>
+        <mat-grid-tile>2</mat-grid-tile>
+        <mat-grid-tile>3</mat-grid-tile>
+        <mat-grid-tile>4</mat-grid-tile>
+    </mat-grid-list>
+
+</mat-card>
+
+
+<mat-form-field>
+    <input type="text" placeholder="Pick" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field> -->
+
+<p>{{ someDate | date:"MM/dd/yyyy"}}</p>
+<p>{{ someString | titlecase}}</p>
+<p>{{ someNumber | currency:"MYR":'symbol':'3.1-1'}}</p>
+<p>{{ someNumber | currency:"SGD":'code'}}</p>
+<p>{{ someNumber | number:"10.2-5"}}</p>
+<hr/>
+<p>{{ someDate | testPipe}}</p>
+<p>{{ someString | testPipe}}</p>
+<p>{{ someNumber | testPipe}}</p>
+<p>{{ someArray | testPipe}}</p>
+<p>{{ someObject | testPipe}}</p>
+<p>{{ someObjectArray | testPipe}}</p>
+

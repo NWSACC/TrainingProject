@@ -38,6 +38,12 @@ import { TnFourSecondComponent } from './tasks/tn-four/tn-four-second/tn-four-se
 import { LoopDirective } from './tasks/tn-three/directive/loop.directive';
 import { EmailValidatorDirective } from './tasks/tn-two/directive/email-validator.directive';
 
+import { MaterialModule } from './_material/material/material.module';
+import { TestMaterialComponent } from './test-material/test-material.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TestPipePipe } from './_pipes/test-pipe.pipe';
+import { TestAsyncPipe } from './_pipes/test-async.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +72,10 @@ import { EmailValidatorDirective } from './tasks/tn-two/directive/email-validato
     TnFourFirstComponent,
     TnFourSecondComponent,
     LoopDirective,
-    EmailValidatorDirective
+    EmailValidatorDirective,
+    TestMaterialComponent,
+    TestPipePipe,
+    TestAsyncPipe
   ],
   imports: [
     BrowserModule,
@@ -74,7 +83,9 @@ import { EmailValidatorDirective } from './tasks/tn-two/directive/email-validato
     ServicesModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [UnsavedChangesGuard],
   bootstrap: [AppComponent]

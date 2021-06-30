@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 
 import { Users } from '../_helpers/interfaces/userDetails';
 import { HttpService } from './http.service';
@@ -19,6 +19,10 @@ export class UserService {
       this.userList = data;
       this.usersSubject.next(data);
     });
+  }
+
+  getAll2(): Observable<Users[]> {
+    return this.http.getAll(this.modelName);
   }
 
   get(id: number): Users {

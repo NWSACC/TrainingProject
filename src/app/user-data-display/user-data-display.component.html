@@ -1,4 +1,9 @@
-<table class="table" *ngIf="UserList.length>0">
+<hr/>
+<div>
+  <input class="form-control" [(ngModel)]="query" />
+</div>
+<!-- <table class="table" *ngIf="UserList.length>0"> -->
+<table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -12,32 +17,32 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of UserList">
+    <tr *ngFor="let user of testSubscribe | testAsync">
+    <!-- <tr *ngFor="let user of UserList | testPipe: query"> -->
       <th scope="row">{{user.id}}</th>
       <td>{{user.name}}</td>
       <td>{{user.lastname}}</td>
       <td>{{user.email}}</td>
       <td>{{user.country}}</td>
       <td>{{user.address}}</td>
-      <td><button class="btn btn-info w-100" (click)="onEditClick(user)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></td>
+      <td><button class="btn btn-info w-100" (click)="onEditClick(user)" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Edit</button></td>
       <td><button class="btn btn-danger w-100" (click)="onDeleteClick(user.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>
 
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <app-sign-up [isEdit]="true" [userData]="EditingUser"></app-sign-up>
-        </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-sign-up [isEdit]="true" [userData]="EditingUser"></app-sign-up>
+      </div>
     </div>
   </div>
 </div>

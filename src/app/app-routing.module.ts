@@ -18,6 +18,7 @@ import { TnTwoComponent } from './tasks/tn-two/tn-two/tn-two.component';
 import { TnThreeComponent } from './tasks/tn-three/tn-three.component';
 import { TnFourFirstComponent } from './tasks/tn-four/tn-four-first/tn-four-first.component';
 import { TnFourSecondComponent } from './tasks/tn-four/tn-four-second/tn-four-second.component';
+import { TestMaterialComponent } from './test-material/test-material.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,6 +38,10 @@ const routes: Routes = [
   { path: 'TnFourFirst', component: TnFourFirstComponent},
   { path: 'TnFourSecond', component: TnFourSecondComponent},
   
+  { path: 'TestMaterial', component: TestMaterialComponent},
+
+  { path: 'test', loadChildren: () => import('./test/test.module').then(m => m.TestModule) },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 
